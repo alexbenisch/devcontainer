@@ -1,0 +1,11 @@
+# Docker
+.DS_Store
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Test artifacts
+test-results/
+*.backup

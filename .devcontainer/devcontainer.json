@@ -1,0 +1,41 @@
+{
+  "name": "Dotfiles Testing Environment",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+
+  "remoteUser": "testuser",
+
+  "features": {},
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash"
+          },
+          "zsh": {
+            "path": "/usr/bin/zsh"
+          }
+        }
+      },
+      "extensions": []
+    }
+  },
+
+  "postCreateCommand": "echo 'Container ready! Run the following to test dotfiles:\n  git clone https://github.com/alexbenisch/dotfiles.git ~/.local/share/dotfiles\n  cd ~/.local/share/dotfiles\n  ./setup\n  chezmoi apply\n  exec zsh'",
+
+  "remoteEnv": {
+    "LANG": "en_US.UTF-8",
+    "LC_ALL": "en_US.UTF-8"
+  },
+
+  "mounts": [],
+
+  "workspaceFolder": "/home/testuser",
+
+  "containerEnv": {}
+}
