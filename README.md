@@ -146,6 +146,12 @@ kubectl <TAB>  # should show completions
 - Check Docker permissions: `docker run hello-world`
 - Try rebuilding: `docker-compose build --no-cache`
 
+### GPG agent/passphrase issues
+- GPG tools are now installed in the container
+- If using GPG agent forwarding over SSH, you may need to unlock your GPG key on the host before container operations
+- For DevPod: Ensure your GPG agent socket is properly forwarded
+- The `.zshrc` will gracefully skip GPG configuration if tools aren't available
+
 ### Setup script fails
 - Check internet connectivity in container
 - Verify GitHub is accessible
