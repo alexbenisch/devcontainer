@@ -22,6 +22,10 @@ RUN locale-gen en_US.UTF-8 && \
 RUN useradd -m -s /bin/bash testuser && \
     echo "testuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
+# Create workspace directory with proper permissions
+RUN mkdir -p /workspaces && \
+    chown testuser:testuser /workspaces
+
 # Switch to non-root user
 USER testuser
 WORKDIR /home/testuser

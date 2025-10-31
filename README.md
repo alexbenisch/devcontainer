@@ -23,11 +23,17 @@ This devcontainer allows you to:
 ### Using DevPod
 
 ```bash
-# Create a new workspace
-devpod up .
+# Navigate to the devcontainer directory
+cd ~/repos/devcontainer
+
+# Create a new workspace (use current directory)
+devpod up . --id dotfiles-test
 
 # SSH into the container
 devpod ssh dotfiles-test
+
+# Or open in your IDE
+devpod up . --ide vscode
 ```
 
 ### Using Docker CLI

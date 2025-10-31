@@ -33,9 +33,9 @@
     "LC_ALL": "en_US.UTF-8"
   },
 
-  "mounts": [],
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 
-  "workspaceFolder": "/home/testuser",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind",
 
   "containerEnv": {}
 }
