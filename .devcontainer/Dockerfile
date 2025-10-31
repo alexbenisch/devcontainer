@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y \
     sudo \
     locales \
     ca-certificates \
+    gpg \
+    gpg-agent \
     && rm -rf /var/lib/apt/lists/*
 
 # Configure locales
