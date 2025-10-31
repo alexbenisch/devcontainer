@@ -26,7 +26,7 @@
     }
   },
 
-  "postCreateCommand": "echo 'Unlock GPG key...' && echo 'test' | gpg --sign --armor || true && bash ~/.welcome.sh",
+  "postCreateCommand": "echo '🔐 Checking GPG configuration...' && (gpg --list-secret-keys && echo 'test' | gpg --sign --armor && echo '✅ GPG unlocked') || echo '⚠️  GPG keys not available (this is OK for testing)' && bash ~/.welcome.sh",
 
   "remoteEnv": {
     "LANG": "en_US.UTF-8",

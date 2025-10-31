@@ -148,9 +148,16 @@ kubectl <TAB>  # should show completions
 
 ### GPG agent/passphrase issues
 - GPG tools are now installed in the container
+- **Note**: GPG keys are NOT automatically available in the container by default
+- The dotfiles will work fine without GPG - it's only needed for git commit signing and SSH auth
 - If using GPG agent forwarding over SSH, you may need to unlock your GPG key on the host before container operations
 - For DevPod: Ensure your GPG agent socket is properly forwarded
-- The `.zshrc` will gracefully skip GPG configuration if tools aren't available
+- The `.zshrc` will gracefully skip GPG configuration if tools/keys aren't available
+
+**To enable GPG in devcontainer:**
+1. Forward GPG agent socket via SSH when connecting
+2. Or mount your GPG directory (not recommended for security)
+3. Or test dotfiles without GPG functionality (recommended for testing)
 
 ### Setup script fails
 - Check internet connectivity in container
